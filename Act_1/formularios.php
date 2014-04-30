@@ -18,12 +18,31 @@ $num = $_REQUEST['num_personas'];
 if (empty($num) || !is_numeric($num) || $num < 1) {
   echo "Por favor ingrese el número de personas válido";
 } else {
+  echo "<form action='proceso.php' method='get'>";
   for ($i=1; $i <= $num; $i++) { 
     echo "<div class='panel'><h4>Datos de la persona $i</h4>";
-    echo "<label for='edad_$i'>EDAD</label>";
-    echo "<input type='text' name='edad_$i' id='edad_$i' />";
+    echo "<div class='form-group'><label for='edad_$i'>Edad</label>";
+    echo "<input type='text' name='edad[$i]' id='edad_$i' required />";
+    echo "</div>";
+    $sexo = "sexo_$i";
+    echo "<div class='form-group'><label for='$sexo'>Sexo</label>";
+    echo "<select id='$sexo' name='sexo[$i]'>";
+    echo "<option name='sexo[$i]' value='femenino'>Femenino</option>";
+    echo "<option name='sexo[$i]' value='masculino'>Masculino</option>";
+    echo "</select></div>";
+    $est_civil = "estCivil_1";
+    echo "<div class='form-group'><label for='$est_civil'>Estado civil</label>";
+    echo "<select id='$est_civil' name='est_civil[$i]'>";
+    echo "<option name='est_civil[$i]' value='1'>Soltero</option>";
+    echo "<option name='est_civil[$i]' value='2'>Casado</option>";
+    echo "<option name='est_civil[$i]' value='3'>Unión libre</option>";
+    echo "<option name='est_civil[$i]' value='4'>Separado</option>";
+    echo "<option name='est_civil[$i]' value='5'>Viudo</option>";
+    echo "</select></div>";
     echo "</div>";
   }
+  echo "<div class='panel'><button class='btn default-btn' name='registros' value='1'>Enviar</button></div>";
+  echo "</form>";
 }
 ?>
 </div>
