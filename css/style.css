@@ -10,15 +10,3 @@ footer {
 label {
   display: inline-block;
 }
-table {
-  border: 2px solid #444;
-  margin: 20px;
-}
-td, th {
-  border-right: 1px solid #777;
-  padding: 2px 5px;
-}
-
-.impar {
-  background: #eee;
-}
