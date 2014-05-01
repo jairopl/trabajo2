@@ -77,6 +77,6 @@ if (empty($_REQUEST['registros'])) {
 }
 ?>
 </div>
-<div><a href="index.php">Ingresar otro valor</a></div>
+<div><a href="index.php">Inicio</a></div>
 </body>
 </html>

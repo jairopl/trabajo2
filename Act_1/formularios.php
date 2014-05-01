@@ -18,7 +18,7 @@ $num = $_REQUEST['num_personas'];
 if (empty($num) || !is_numeric($num) || $num < 1) {
   echo "Por favor ingrese el número de personas válido";
 } else {
-  echo "<form action='resultado.php' method='get'>";
+  echo "<form action='resultado.php' method='post'>";
   for ($i=1; $i <= $num; $i++) { 
     echo "<div class='panel'><h4>Datos de la persona $i</h4>";
     echo "<div class='form-group'><label for='edad_$i'>Edad</label>";
@@ -46,6 +46,6 @@ if (empty($num) || !is_numeric($num) || $num < 1) {
 }
 ?>
 </div>
-<div><a href="index.php">Ingresar otro valor</a></div>
+<div><a href="index.php">Inicio</a></div>
 </body>
 </html>
